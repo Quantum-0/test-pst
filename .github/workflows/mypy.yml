@@ -1,0 +1,17 @@
+name: MyPy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  black-list:
+    name: MyPy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: jpetrucciani/mypy-check@master
+      with:
+        path: 'src/*'
