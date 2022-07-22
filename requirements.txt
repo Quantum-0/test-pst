@@ -2,3 +2,5 @@ colorama==0.4.5
 mypy==0.971
 pytest==7.1.2
 lxml==4.9.1
+
+Flask~=2.1.3

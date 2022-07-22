@@ -1,10 +1,13 @@
-""" Example main file """
-from time import sleep
-import os
-from another_file import HELLO_WORLD_STRING, time
+from flask import Flask
 
-if __name__ == '__main__':
-    assert os.environ['TEST_ENV'] == '1'
-    while True:
-        print(HELLO_WORLD_STRING)
-        sleep(time())
+import another_file
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def hello_world():
+    return another_file.test()
+
+
+app.run('127.0.0.1', port=33321)
